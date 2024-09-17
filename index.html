@@ -11,8 +11,11 @@
 <div class="container">
     <h1>Todo List</h1>
     <div class="input-container">
-        <input class="task-input" type="text" placeholder="Enter a new task">
-        <button class="add-btn">Add task</button>
+        <input class="task-input" id="taskInput" type="text" placeholder="Enter a new task">
+        <button class="add-btn" id="addBtn">Add task</button>
+        <ul id="taskList">
+           
+        </ul>
     </div>
 
 </div>
@@ -36,5 +39,49 @@
 
 
 
+
+
+<script>
+    document.getElementById('addBtn').addEventListener('click', addTask)
+    document.getElementById('taskInput').addEventListener('keypress', function(event){
+        if(event.key === 'Enter'){
+            addTask()
+        }
+    })
+
+
+    function addTask(){
+        const taskInput = document.getElementById('taskInput');
+        const taskText = taskInput.value.trim();
+
+
+        if(taskText !== ''){
+            const li = document.createElement('li');
+            li.textContent = taskText;
+
+
+
+            document.getElementById('taskList').appendChild(li);
+            taskInput.value = '';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
