@@ -63,6 +63,15 @@ ul li {
     align-items: center;
 }
 
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+}
+
 
 
 
